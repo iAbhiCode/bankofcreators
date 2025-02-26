@@ -280,7 +280,7 @@ const Hero = () => {
               </div>
 
               {/* Heading */}
-              <h1 className="font-poppins font-semibold text-[40px] xs:text-[48px] sm:text-[52px] md:text-[58px] lg:text-[64px] xl:text-[68px] text-slate-800 leading-[1.1] mb-6">
+              <h1 className="font-poppins font-semibold text-[40px] xs:text-[48px] sm:text-[52px] md:text-[58px] lg:text-[64px] xl:text-[68px] text-white leading-[1.1] mb-6">
                 {headingStart}{" "}
                 {headingEnd && (
                   <span className="headend">{headingEnd}</span>
@@ -289,7 +289,7 @@ const Hero = () => {
 
               {/* Description */}
               <p
-                className={`${styles.paragraph} mx-auto max-w-[700px] mb-8 text-black text-3xl`}
+                className={`${styles.paragraph} mx-auto max-w-[700px] mb-8 text-white text-3xl`}
               >
                 {currentQuote.description}
               </p>
