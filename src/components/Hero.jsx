@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../style";
 
 const Hero = () => {
@@ -183,16 +183,15 @@ const Hero = () => {
       id="home"
       className="relative h-screen w-full overflow-hidden bg-primary"
     >
-      {/* Audio Element */}
+      {/* Audio Element - Updated with external music link */}
       <audio
         ref={audioRef}
-        src="src/assets/music.mp3"
+        src="https://freelistenonline.com/music/vkstream/77966278"
         loop
         autoPlay
         muted={false}
         playsInline
-      />{" "}
-      {/* Added autoPlay attribute */}
+      />
       {/* Blurry video background */}
       <div className="absolute inset-0 w-full h-full z-0">
         <video
