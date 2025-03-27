@@ -192,10 +192,10 @@ const Hero = () => {
         muted={false}
         playsInline
       />
-      {/* Blurry video background */}
+      {/* Video background with dark overlay */}
       <div className="absolute inset-0 w-full h-full z-0">
         <video
-          className="w-full h-full object-cover blur-sm "
+          className="w-full h-full object-cover"
           autoPlay
           loop
           muted
@@ -207,9 +207,11 @@ const Hero = () => {
           />
           Your browser does not support the video tag.
         </video>
+        {/* Dark overlay instead of blur */}
+        <div className="absolute inset-0 bg-black bg-opacity-70"></div>
       </div>
       {/* Music control button */}
-      <div className="absolute top-6 right-6 z-30">
+      <div className="absolute top-24 right-6 z-30">
         <button
           onClick={togglePlay}
           className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 bg-opacity-70 text-white hover:bg-pink-gradient transition-all shadow-lg"

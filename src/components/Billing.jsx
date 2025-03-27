@@ -12,7 +12,7 @@ const RoyaltyCalculator = () => {
   // Royalty rates object by platform and country (USD per 1000 streams)
   const royaltyRates = {
     spotify: {
-      US: 4.0,
+      US: 0.0041114,
       UK: 3.8,
       CA: 3.7,
       AU: 3.6,
@@ -32,6 +32,29 @@ const RoyaltyCalculator = () => {
       NZ: 3.5,
       SG: 3.3,
       ZA: 2.6,
+      AR: 2.5,
+      AT: 3.4,
+      BE: 3.5,
+      CH: 3.6,
+      CL: 2.6,
+      CN: 2.3,
+      CO: 2.5,
+      EG: 2.3,
+      FI: 3.6,
+      ID: 2.2,
+      IE: 3.7,
+      IL: 3.2,
+      MY: 2.7,
+      NG: 2.0,
+      PH: 2.2,
+      PL: 3.0,
+      PT: 3.1,
+      RU: 2.7,
+      SA: 2.9,
+      TH: 2.4,
+      TR: 2.5,
+      UA: 2.6,
+      VN: 2.1,
       other: 3.0
     },
     apple: {
@@ -55,6 +78,29 @@ const RoyaltyCalculator = () => {
       NZ: 5.0,
       SG: 4.8,
       ZA: 4.1,
+      AR: 4.0,
+      AT: 4.9,
+      BE: 5.0,
+      CH: 5.1,
+      CL: 4.1,
+      CN: 3.8,
+      CO: 4.0,
+      EG: 3.8,
+      FI: 5.1,
+      ID: 3.7,
+      IE: 5.2,
+      IL: 4.7,
+      MY: 4.2,
+      NG: 3.5,
+      PH: 3.7,
+      PL: 4.5,
+      PT: 4.6,
+      RU: 4.2,
+      SA: 4.4,
+      TH: 3.9,
+      TR: 4.0,
+      UA: 4.1,
+      VN: 3.6,
       other: 4.5
     },
     youtube: {
@@ -78,6 +124,29 @@ const RoyaltyCalculator = () => {
       NZ: 1.6,
       SG: 1.5,
       ZA: 1.1,
+      AR: 1.0,
+      AT: 1.7,
+      BE: 1.7,
+      CH: 1.8,
+      CL: 1.1,
+      CN: 0.9,
+      CO: 1.0,
+      EG: 0.9,
+      FI: 1.7,
+      ID: 0.8,
+      IE: 1.8,
+      IL: 1.5,
+      MY: 1.2,
+      NG: 0.7,
+      PH: 0.8,
+      PL: 1.4,
+      PT: 1.5,
+      RU: 1.2,
+      SA: 1.3,
+      TH: 1.0,
+      TR: 1.1,
+      UA: 1.1,
+      VN: 0.8,
       other: 1.5
     },
     amazon: {
@@ -101,6 +170,29 @@ const RoyaltyCalculator = () => {
       NZ: 3.7,
       SG: 3.5,
       ZA: 2.9,
+      AR: 2.8,
+      AT: 3.7,
+      BE: 3.8,
+      CH: 3.9,
+      CL: 2.9,
+      CN: 2.6,
+      CO: 2.8,
+      EG: 2.6,
+      FI: 3.8,
+      ID: 2.5,
+      IE: 3.9,
+      IL: 3.4,
+      MY: 3.0,
+      NG: 2.3,
+      PH: 2.5,
+      PL: 3.3,
+      PT: 3.4,
+      RU: 3.0,
+      SA: 3.2,
+      TH: 2.7,
+      TR: 2.8,
+      UA: 2.9,
+      VN: 2.4,
       other: 3.5
     },
     tidal: {
@@ -124,6 +216,29 @@ const RoyaltyCalculator = () => {
       NZ: 5.5,
       SG: 5.3,
       ZA: 4.6,
+      AR: 4.5,
+      AT: 5.4,
+      BE: 5.5,
+      CH: 5.6,
+      CL: 4.6,
+      CN: 4.3,
+      CO: 4.5,
+      EG: 4.3,
+      FI: 5.6,
+      ID: 4.2,
+      IE: 5.7,
+      IL: 5.2,
+      MY: 4.7,
+      NG: 4.0,
+      PH: 4.2,
+      PL: 5.0,
+      PT: 5.1,
+      RU: 4.7,
+      SA: 4.9,
+      TH: 4.4,
+      TR: 4.5,
+      UA: 4.6,
+      VN: 4.1,
       other: 5.0
     },
     other: {
@@ -147,6 +262,29 @@ const RoyaltyCalculator = () => {
       NZ: 3.0,
       SG: 2.8,
       ZA: 2.2,
+      AR: 2.1,
+      AT: 3.0,
+      BE: 3.1,
+      CH: 3.2,
+      CL: 2.2,
+      CN: 1.9,
+      CO: 2.1,
+      EG: 1.9,
+      FI: 3.1,
+      ID: 1.8,
+      IE: 3.2,
+      IL: 2.7,
+      MY: 2.3,
+      NG: 1.6,
+      PH: 1.8,
+      PL: 2.6,
+      PT: 2.7,
+      RU: 2.3,
+      SA: 2.5,
+      TH: 2.0,
+      TR: 2.1,
+      UA: 2.2,
+      VN: 1.7,
       other: 2.8
     }
   };
@@ -292,6 +430,29 @@ const RoyaltyCalculator = () => {
               <option value="NZ">New Zealand</option>
               <option value="SG">Singapore</option>
               <option value="ZA">South Africa</option>
+              <option value="AR">Argentina</option>
+              <option value="AT">Austria</option>
+              <option value="BE">Belgium</option>
+              <option value="CH">Switzerland</option>
+              <option value="CL">Chile</option>
+              <option value="CN">China</option>
+              <option value="CO">Colombia</option>
+              <option value="EG">Egypt</option>
+              <option value="FI">Finland</option>
+              <option value="ID">Indonesia</option>
+              <option value="IE">Ireland</option>
+              <option value="IL">Israel</option>
+              <option value="MY">Malaysia</option>
+              <option value="NG">Nigeria</option>
+              <option value="PH">Philippines</option>
+              <option value="PL">Poland</option>
+              <option value="PT">Portugal</option>
+              <option value="RU">Russia</option>
+              <option value="SA">Saudi Arabia</option>
+              <option value="TH">Thailand</option>
+              <option value="TR">Turkey</option>
+              <option value="UA">Ukraine</option>
+              <option value="VN">Vietnam</option>
               <option value="other">Other Countries</option>
             </select>
           </div>
